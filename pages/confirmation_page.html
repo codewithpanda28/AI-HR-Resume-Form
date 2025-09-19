@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Submitted - Resume Portal</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fresumepor2237back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface shadow-sm border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <h1 class="text-xl font-semibold text-text-primary">Resume Portal</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="main_submission_form.html" class="text-text-secondary hover:text-primary transition-fast">Submit Application</a>
+                    <a href="status_tracker_portal.html" class="text-text-secondary hover:text-primary transition-fast">Track Status</a>
+                    <a href="help_center.html" class="text-text-secondary hover:text-primary transition-fast">Help Center</a>
+                    <a href="employer_dashboard.html" class="text-text-secondary hover:text-primary transition-fast">Employers</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-secondary-100 transition-fast" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="main_submission_form.html" class="text-text-secondary hover:text-primary transition-fast py-2">Submit Application</a>
+                    <a href="status_tracker_portal.html" class="text-text-secondary hover:text-primary transition-fast py-2">Track Status</a>
+                    <a href="help_center.html" class="text-text-secondary hover:text-primary transition-fast py-2">Help Center</a>
+                    <a href="employer_dashboard.html" class="text-text-secondary hover:text-primary transition-fast py-2">Employers</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto">
+            <!-- Success Animation Container -->
+            <div class="text-center mb-8 animate-fade-in">
+                <!-- Success Icon -->
+                <div class="mx-auto w-24 h-24 bg-success-100 rounded-full flex items-center justify-center mb-6 animate-scale-in">
+                    <svg class="w-12 h-12 text-success-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.41,10.09L6,11.5L11,16.5Z"/>
+                    </svg>
+                </div>
+                
+                <!-- Success Headline -->
+                <h2 class="text-3xl font-semibold text-text-primary mb-4 animate-slide-up">
+                    Application Successfully Submitted!
+                </h2>
+                
+                <!-- Success Message -->
+                <p class="text-lg text-text-secondary mb-8 animate-slide-up-delay">
+                    Thank you for your interest in joining our team. Your application has been received and is now under review.
+                </p>
+            </div>
+
+            <!-- Confirmation Details Card -->
+            <div class="card mb-8 animate-slide-up-delay-2">
+                <h3 class="text-xl font-medium text-text-primary mb-6 flex items-center">
+                    <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9,10H7V12H9V10M13,10H11V12H13V10M17,10H15V12H17V10M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z"/>
+                    </svg>
+                    Confirmation Details
+                </h3>
+                
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center py-3 border-b border-secondary-200">
+                        <span class="text-text-secondary">Reference Number</span>
+                        <span class="font-medium text-text-primary mono">#RP-2025-0904-7842</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-3 border-b border-secondary-200">
+                        <span class="text-text-secondary">Submission Date</span>
+                        <span class="font-medium text-text-primary">September 4, 2025</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-3 border-b border-secondary-200">
+                        <span class="text-text-secondary">Submission Time</span>
+                        <span class="font-medium text-text-primary">6:59 AM EST</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center py-3">
+                        <span class="text-text-secondary">Status</span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-warning-100 text-warning-600">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,6A1,1 0 0,0 11,7V13A1,1 0 0,0 12,14A1,1 0 0,0 13,13V7A1,1 0 0,0 12,6M12,16A1.5,1.5 0 0,0 10.5,17.5A1.5,1.5 0 0,0 12,19A1.5,1.5 0 0,0 13.5,17.5A1.5,1.5 0 0,0 12,16Z"/>
+                            </svg>
+                            Under Review
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps Card -->
+            <div class="card mb-8 animate-slide-up-delay-3">
+                <h3 class="text-xl font-medium text-text-primary mb-6 flex items-center">
+                    <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,17A1.5,1.5 0 0,1 10.5,15.5A1.5,1.5 0 0,1 12,14A1.5,1.5 0 0,1 13.5,15.5A1.5,1.5 0 0,1 12,17M12,10.5C12.8,10.5 13.5,9.8 13.5,9C13.5,8.2 12.8,7.5 12,7.5C11.2,7.5 10.5,8.2 10.5,9C10.5,9.8 11.2,10.5 12,10.5Z"/>
+                    </svg>
+                    What Happens Next?
+                </h3>
+                
+                <div class="space-y-6">
+                    <!-- Timeline -->
+                    <div class="relative">
+                        <div class="absolute left-4 top-8 bottom-0 w-0.5 bg-secondary-200"></div>
+                        
+                        <div class="relative flex items-start space-x-4 pb-6">
+                            <div class="flex-shrink-0 w-8 h-8 bg-success-600 rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-text-primary">Application Received</h4>
+                                <p class="text-sm text-text-secondary">Your application has been successfully submitted and logged in our system.</p>
+                                <p class="text-xs text-success-600 mt-1">Completed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex items-start space-x-4 pb-6">
+                            <div class="flex-shrink-0 w-8 h-8 bg-warning-500 rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,6A1,1 0 0,0 11,7V13A1,1 0 0,0 12,14A1,1 0 0,0 13,13V7A1,1 0 0,0 12,6M12,16A1.5,1.5 0 0,0 10.5,17.5A1.5,1.5 0 0,0 12,19A1.5,1.5 0 0,0 13.5,17.5A1.5,1.5 0 0,0 12,16Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-text-primary">Initial Review</h4>
+                                <p class="text-sm text-text-secondary">Our team will review your application within 3-5 business days.</p>
+                                <p class="text-xs text-warning-600 mt-1">In Progress</p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex items-start space-x-4 pb-6">
+                            <div class="flex-shrink-0 w-8 h-8 bg-secondary-300 rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-secondary-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17,12C17,14.42 15.28,16.44 13,16.9V21H11V16.9C8.72,16.44 7,14.42 7,12C7,9.58 8.72,7.56 11,7.1V2H13V7.1C15.28,7.56 17,9.58 17,12M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-text-primary">Interview Process</h4>
+                                <p class="text-sm text-text-secondary">If selected, we'll contact you to schedule an interview within 1-2 weeks.</p>
+                                <p class="text-xs text-secondary-500 mt-1">Pending</p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-secondary-300 rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-secondary-600" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.41,10.09L6,11.5L11,16.5Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-text-primary">Final Decision</h4>
+                                <p class="text-sm text-text-secondary">We'll notify you of our decision regardless of the outcome.</p>
+                                <p class="text-xs text-secondary-500 mt-1">Pending</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <!-- Track Status Card -->
+                <div class="card hover:shadow-md transition-fast animate-slide-up-delay-4">
+                    <div class="text-center">
+                        <svg class="w-12 h-12 text-primary mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                        </svg>
+                        <h3 class="text-lg font-medium text-text-primary mb-2">Track Your Application</h3>
+                        <p class="text-text-secondary text-sm mb-4">Monitor your application status and receive updates in real-time.</p>
+                        <a href="status_tracker_portal.html" class="btn-primary w-full">
+                            Track Status
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job Alerts Card -->
+                <div class="card hover:shadow-md transition-fast animate-slide-up-delay-5">
+                    <div class="text-center">
+                        <svg class="w-12 h-12 text-accent mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21"/>
+                        </svg>
+                        <h3 class="text-lg font-medium text-text-primary mb-2">Get Job Alerts</h3>
+                        <p class="text-text-secondary text-sm mb-4">Stay informed about new opportunities that match your profile.</p>
+                        <button class="btn-secondary w-full" onclick="showJobAlertModal()">
+                            Setup Alerts
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Sharing Section -->
+            <div class="card text-center mb-8 animate-slide-up-delay-6">
+                <h3 class="text-lg font-medium text-text-primary mb-4">Share Your Achievement</h3>
+                <p class="text-text-secondary mb-6">Let your network know about your career progress!</p>
+                
+                <div class="flex justify-center space-x-4">
+                    <button class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-fast" onclick="shareOnLinkedIn()">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        LinkedIn
+                    </button>
+                    
+                    <button class="flex items-center px-4 py-2 bg-secondary-600 text-white rounded-lg hover:bg-secondary-700 transition-fast" onclick="copyLink()">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16,1H4C2.89,1 2,1.89 2,3V17H4V3H16V1M19,5H8C6.89,5 6,5.89 6,7V21C6,22.11 6.89,23 8,23H19C20.11,23 21,22.11 21,21V7C21,5.89 20.11,5 19,5M19,21H8V7H19V21Z"/>
+                        </svg>
+                        Copy Link
+                    </button>
+                </div>
+            </div>
+
+            <!-- Help Section -->
+            <div class="bg-secondary-100 rounded-lg p-6 text-center animate-slide-up-delay-7">
+                <h3 class="text-lg font-medium text-text-primary mb-2">Need Help?</h3>
+                <p class="text-text-secondary mb-4">Have questions about your application or our process?</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+                    <a href="help_center.html" class="btn-secondary">
+                        <svg class="w-4 h-4 mr-2 inline" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M11,18H13V16H11V18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C7.59,8 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A4,4 0 0,0 8,10H10A2,2 0 0,1 12,8A2,2 0 0,1 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10A4,4 0 0,0 12,6Z"/>
+                        </svg>
+                        Help Center
+                    </a>
+                    
+                    <a href="mailto:support@resumeportal.com" class="btn-secondary">
+                        <svg class="w-4 h-4 mr-2 inline" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                        </svg>
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-text-primary font-medium">Resume Portal</span>
+                </div>
+                <div class="flex space-x-6 text-sm text-text-secondary">
+                    <a href="help_center.html" class="hover:text-primary transition-fast">Help Center</a>
+                    <a href="privacy_policy.html" class="hover:text-primary transition-fast">Privacy Policy</a>
+                    <a href="status_tracker_portal.html" class="hover:text-primary transition-fast">Track Application</a>
+                </div>
+            </div>
+            <div class="text-center text-sm text-text-secondary mt-4">
+                © 2025 Resume Portal. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Job Alert Modal -->
+    <div id="jobAlertModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-surface rounded-lg max-w-md w-full p-6 animate-scale-in">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-medium text-text-primary">Setup Job Alerts</h3>
+                <button onclick="hideJobAlertModal()" class="text-text-secondary hover:text-text-primary">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <form onsubmit="setupJobAlerts(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" placeholder="your.email@example.com" required />
+                    </div>
+                    
+                    <div>
+                        <label class="form-label">Job Categories</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="technology" />
+                                <span class="text-text-primary">Technology</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="marketing" />
+                                <span class="text-text-primary">Marketing</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2" value="sales" />
+                                <span class="text-text-primary">Sales</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-3 pt-4">
+                        <button type="submit" class="btn-primary flex-1">Setup Alerts</button>
+                        <button type="button" onclick="hideJobAlertModal()" class="btn-secondary flex-1">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .animate-scale-in {
+            animation: scaleIn 0.5s ease-out 0.2s both;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out 0.4s both;
+        }
+        
+        .animate-slide-up-delay {
+            animation: slideUp 0.6s ease-out 0.6s both;
+        }
+        
+        .animate-slide-up-delay-2 {
+            animation: slideUp 0.6s ease-out 0.8s both;
+        }
+        
+        .animate-slide-up-delay-3 {
+            animation: slideUp 0.6s ease-out 1s both;
+        }
+        
+        .animate-slide-up-delay-4 {
+            animation: slideUp 0.6s ease-out 1.2s both;
+        }
+        
+        .animate-slide-up-delay-5 {
+            animation: slideUp 0.6s ease-out 1.4s both;
+        }
+        
+        .animate-slide-up-delay-6 {
+            animation: slideUp 0.6s ease-out 1.6s both;
+        }
+        
+        .animate-slide-up-delay-7 {
+            animation: slideUp 0.6s ease-out 1.8s both;
+        }
+    </style>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Job Alert Modal
+        function showJobAlertModal() {
+            document.getElementById('jobAlertModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideJobAlertModal() {
+            document.getElementById('jobAlertModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function setupJobAlerts(e) {
+            e.preventDefault();
+            // Simulate API call
+            setTimeout(() => {
+                alert('Job alerts have been set up successfully! You will receive notifications about matching opportunities.');
+                hideJobAlertModal();
+            }, 1000);
+        }
+
+        // Social Sharing
+        function shareOnLinkedIn() {
+            const text = "I just submitted my application through Resume Portal! Excited about new career opportunities. #CareerGrowth #JobSearch";
+            const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}&summary=${encodeURIComponent(text)}`;
+            window.open(url, '_blank', 'width=600,height=400');
+        }
+
+        function copyLink() {
+            const referenceNumber = '#RP-2025-0904-7842';
+            const text = `Application submitted successfully! Reference: ${referenceNumber}`;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('Reference number copied to clipboard!');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Reference number copied to clipboard!');
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-4 right-4 bg-success-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-slide-up';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                hideJobAlertModal();
+            }
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('jobAlertModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideJobAlertModal();
+            }
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

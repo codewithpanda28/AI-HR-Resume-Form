@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Center - Resume Portal</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fresumepor2237back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface shadow-sm border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <h1 class="text-xl font-semibold text-text-primary">Resume Portal</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="main_submission_form.html" class="text-text-secondary hover:text-primary transition-fast">Submit Application</a>
+                    <a href="status_tracker_portal.html" class="text-text-secondary hover:text-primary transition-fast">Track Status</a>
+                    <a href="help_center.html" class="text-primary font-medium">Help Center</a>
+                    <a href="employer_dashboard.html" class="text-text-secondary hover:text-primary transition-fast">Employers</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-secondary-100 transition-fast" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="main_submission_form.html" class="text-text-secondary hover:text-primary transition-fast py-2">Submit Application</a>
+                    <a href="status_tracker_portal.html" class="text-text-secondary hover:text-primary transition-fast py-2">Track Status</a>
+                    <a href="help_center.html" class="text-primary font-medium py-2">Help Center</a>
+                    <a href="employer_dashboard.html" class="text-text-secondary hover:text-primary transition-fast py-2">Employers</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header Section -->
+            <div class="text-center mb-12">
+                <div class="flex justify-center mb-6">
+                    <div class="bg-primary-100 p-4 rounded-full">
+                        <svg class="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-4xl font-semibold text-text-primary mb-4">Help Center</h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto">
+                    Find answers to common questions and get the support you need for a smooth application experience.
+                </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="mb-12">
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <svg class="w-5 h-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <input type="text" id="searchInput" placeholder="Search for help topics..." class="form-input pl-12 pr-4 py-4 text-lg" onkeyup="searchFAQ()" />
+                    <button class="absolute inset-y-0 right-0 pr-4 flex items-center text-secondary-400 hover:text-primary transition-fast" onclick="clearSearch()">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="card text-center hover:shadow-md transition-fast cursor-pointer" onclick="scrollToSection('technical')">
+                    <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20,18C20.5,18 21,17.5 21,17V7C21,6.5 20.5,6 20,6H4C3.5,6 3,6.5 3,7V17C3,17.5 3.5,18 4,18H12L10,20V21H14V20L12,18H20M5,8H19V16H5V8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-medium text-text-primary mb-2">Technical Support</h3>
+                    <p class="text-text-secondary">File uploads, browser issues, and technical troubleshooting</p>
+                </div>
+
+                <div class="card text-center hover:shadow-md transition-fast cursor-pointer" onclick="scrollToSection('process')">
+                    <div class="bg-success-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-success-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-medium text-text-primary mb-2">Application Process</h3>
+                    <p class="text-text-secondary">Step-by-step guidance for completing your submission</p>
+                </div>
+
+                <div class="card text-center hover:shadow-md transition-fast cursor-pointer" onclick="scrollToSection('privacy')">
+                    <div class="bg-accent-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-accent-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-medium text-text-primary mb-2">Privacy & Security</h3>
+                    <p class="text-text-secondary">Data protection, security measures, and your rights</p>
+                </div>
+            </div>
+
+            <!-- FAQ Sections -->
+            <div class="space-y-12">
+                <!-- Technical Support Section -->
+                <section id="technical" class="faq-section">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-primary-100 p-3 rounded-lg mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20,18C20.5,18 21,17.5 21,17V7C21,6.5 20.5,6 20,6H4C3.5,6 3,6.5 3,7V17C3,17.5 3.5,18 4,18H12L10,20V21H14V20L12,18H20M5,8H19V16H5V8Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-text-primary">Technical Support</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">My file won't upload. What should I do?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">If you're having trouble uploading your resume, try these solutions:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li>Ensure your file is in PDF, DOC, or DOCX format</li>
+                                    <li>Check that your file size is under 5MB</li>
+                                    <li>Try refreshing the page and uploading again</li>
+                                    <li>Clear your browser cache and cookies</li>
+                                    <li>Try using a different browser (Chrome, Firefox, Safari)</li>
+                                </ul>
+                                <p class="mt-4">If the problem persists, you can provide your LinkedIn profile URL as an alternative.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">The form isn't working on my mobile device</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">Our form is optimized for mobile devices. If you're experiencing issues:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li>Ensure you're using an updated browser</li>
+                                    <li>Try switching from mobile data to WiFi or vice versa</li>
+                                    <li>Close other apps to free up memory</li>
+                                    <li>Try rotating your device to landscape mode for file uploads</li>
+                                    <li>Use the LinkedIn URL option if file upload fails</li>
+                                </ul>
+                                <p class="mt-4">For the best mobile experience, we recommend using Chrome or Safari browsers.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">I'm getting browser compatibility errors</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">Resume Portal works best with modern browsers. We recommend:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Chrome:</strong> Version 90 or newer</li>
+                                    <li><strong>Firefox:</strong> Version 88 or newer</li>
+                                    <li><strong>Safari:</strong> Version 14 or newer</li>
+                                    <li><strong>Edge:</strong> Version 90 or newer</li>
+                                </ul>
+                                <p class="mt-4">If you're using an older browser, please update to the latest version. Internet Explorer is not supported.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Application Process Section -->
+                <section id="process" class="faq-section">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-success-100 p-3 rounded-lg mr-4">
+                            <svg class="w-6 h-6 text-success-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-text-primary">Application Process</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">What information do I need to complete my application?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">To complete your application, you'll need:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Personal Information:</strong> Name, email, phone, and location</li>
+                                    <li><strong>Professional Details:</strong> Job title, experience level, and key skills</li>
+                                    <li><strong>Resume:</strong> PDF, DOC, or DOCX file (or LinkedIn profile URL)</li>
+                                    <li><strong>Preferences:</strong> Job type and salary expectations (optional)</li>
+                                </ul>
+                                <p class="mt-4">The entire process typically takes 5-10 minutes to complete.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">Can I save my progress and return later?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">Currently, the application form doesn't save progress automatically. However:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li>The form is designed to be completed in one session (5-10 minutes)</li>
+                                    <li>Your browser may retain some information if you navigate away briefly</li>
+                                    <li>We recommend completing the application when you have all required information ready</li>
+                                </ul>
+                                <p class="mt-4">If you need to step away, consider preparing your information in a separate document first.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">What happens after I submit my application?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">After submitting your application:</p>
+                                <ol class="list-decimal pl-6 space-y-2">
+                                    <li>You'll receive an immediate confirmation with your application ID</li>
+                                    <li>Our team will review your submission within 2-3 business days</li>
+                                    <li>You'll receive email updates about your application status</li>
+                                    <li>If selected, we'll contact you to schedule an interview</li>
+                                </ol>
+                                <p class="mt-4">You can track your application status using the <a href="status_tracker_portal.html" class="text-primary hover:underline">Status Tracker</a>.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">Can I update my application after submitting?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">Once submitted, applications cannot be edited directly. However, you can:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li>Contact our support team with updates or corrections</li>
+                                    <li>Submit additional documents via email if requested</li>
+                                    <li>Provide updated information during the interview process</li>
+                                </ul>
+                                <p class="mt-4">For significant changes, please contact us at <a href="mailto:support@resumeportal.com" class="text-primary hover:underline">support@resumeportal.com</a> with your application ID.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Privacy & Security Section -->
+                <section id="privacy" class="faq-section">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-accent-100 p-3 rounded-lg mr-4">
+                            <svg class="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-text-primary">Privacy & Security</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">How is my personal information protected?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">We take data protection seriously and implement multiple security measures:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>SSL Encryption:</strong> All data transmission is encrypted</li>
+                                    <li><strong>Secure Storage:</strong> Information is stored on protected servers</li>
+                                    <li><strong>Access Control:</strong> Only authorized personnel can access applications</li>
+                                    <li><strong>Regular Audits:</strong> We conduct security reviews and updates</li>
+                                </ul>
+                                <p class="mt-4">Read our full <a href="privacy_policy.html" class="text-primary hover:underline">Privacy Policy</a> for detailed information.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">Who has access to my application?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">Access to your application is strictly limited to:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li>HR team members involved in the recruitment process</li>
+                                    <li>Hiring managers for relevant positions</li>
+                                    <li>Authorized system administrators for technical support</li>
+                                </ul>
+                                <p class="mt-4">We never share your information with third parties without your explicit consent, except as required by law.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">Can I request deletion of my data?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">Yes, you have the right to request deletion of your personal data. You can:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li>Email us at <a href="mailto:privacy@resumeportal.com" class="text-primary hover:underline">privacy@resumeportal.com</a></li>
+                                    <li>Include your application ID and deletion request</li>
+                                    <li>We'll process your request within 30 days</li>
+                                    <li>Some information may be retained for legal compliance</li>
+                                </ul>
+                                <p class="mt-4">Note that deletion may affect our ability to consider you for future opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Account Management Section -->
+                <section id="account" class="faq-section">
+                    <div class="flex items-center mb-8">
+                        <div class="bg-warning-100 p-3 rounded-lg mr-4">
+                            <svg class="w-6 h-6 text-warning-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-text-primary">Account Management</h3>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">Do I need to create an account to apply?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">No account creation is required! Our streamlined process allows you to:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li>Submit applications directly without registration</li>
+                                    <li>Track your application using the provided ID</li>
+                                    <li>Receive updates via email</li>
+                                </ul>
+                                <p class="mt-4">This approach respects your time while maintaining security and functionality.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">How do I track my application status?</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">After submitting your application, you can track its progress by:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li>Using your application ID on our <a href="status_tracker_portal.html" class="text-primary hover:underline">Status Tracker</a></li>
+                                    <li>Checking email updates sent to your registered address</li>
+                                    <li>Monitoring for status changes in real-time</li>
+                                </ul>
+                                <p class="mt-4">Keep your application ID safe - you'll need it to access status updates.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item card">
+                            <button class="faq-question w-full text-left flex justify-between items-center py-2" onclick="toggleFAQ(this)">
+                                <span class="font-medium text-text-primary">I'm not receiving email notifications</span>
+                                <svg class="w-5 h-5 text-secondary-400 transform transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden mt-4 text-text-secondary">
+                                <p class="mb-4">If you're not receiving our emails, please check:</p>
+                                <ul class="list-disc pl-6 space-y-2">
+                                    <li><strong>Spam/Junk folder:</strong> Our emails might be filtered</li>
+                                    <li><strong>Email address:</strong> Ensure you provided the correct address</li>
+                                    <li><strong>Email filters:</strong> Check if you have filters blocking our domain</li>
+                                    <li><strong>Inbox capacity:</strong> Ensure your inbox isn't full</li>
+                                </ul>
+                                <p class="mt-4">Add <strong>noreply@resumeportal.com</strong> to your contacts to ensure delivery.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Contact Support Section -->
+            <div class="mt-16 bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-8">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-semibold text-text-primary mb-4">Still Need Help?</h3>
+                    <p class="text-text-secondary text-lg">Our support team is here to assist you with any questions or concerns.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Email Support -->
+                    <div class="bg-surface rounded-lg p-6 text-center">
+                        <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-medium text-text-primary mb-2">Email Support</h4>
+                        <p class="text-text-secondary mb-4">Get detailed help via email</p>
+                        <a href="mailto:support@resumeportal.com" class="btn-primary inline-flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                            </svg>
+                            Send Email
+                        </a>
+                        <p class="text-sm text-text-secondary mt-3">Response within 24 hours</p>
+                    </div>
+
+                    <!-- Live Chat -->
+                    <div class="bg-surface rounded-lg p-6 text-center">
+                        <div class="bg-success-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-success-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,3C6.5,3 2,6.58 2,11A7.18,7.18 0 0,0 2.64,14.25L1,22L8.75,20.36C9.83,20.79 10.87,21 12,21C17.5,21 22,17.42 22,13S17.5,3 12,3M12,5C16.42,5 20,7.69 20,11S16.42,17 12,17C10.96,17 9.95,16.82 9,16.5L4.5,17.5L5.5,13C5.18,12.05 5,11.04 5,10C5,6.69 8.58,4 12,4Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-medium text-text-primary mb-2">Live Chat</h4>
+                        <p class="text-text-secondary mb-4">Instant help during business hours</p>
+                        <button class="btn-secondary inline-flex items-center" onclick="openLiveChat()">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,3C6.5,3 2,6.58 2,11A7.18,7.18 0 0,0 2.64,14.25L1,22L8.75,20.36C9.83,20.79 10.87,21 12,21C17.5,21 22,17.42 22,13S17.5,3 12,3M12,5C16.42,5 20,7.69 20,11S16.42,17 12,17C10.96,17 9.95,16.82 9,16.5L4.5,17.5L5.5,13C5.18,12.05 5,11.04 5,10C5,6.69 8.58,4 12,4Z"/>
+                            </svg>
+                            Start Chat
+                        </button>
+                        <p class="text-sm text-text-secondary mt-3">Mon-Fri, 9AM-6PM EST</p>
+                    </div>
+                </div>
+
+                <!-- Visual Guide CTA -->
+                <div class="text-center mt-8">
+                    <div class="bg-surface rounded-lg p-6 inline-block">
+                        <div class="flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-accent-600 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z"/>
+                            </svg>
+                            <h4 class="text-lg font-medium text-text-primary">Need Visual Guidance?</h4>
+                        </div>
+                        <p class="text-text-secondary mb-4">Check out our step-by-step application guide with screenshots</p>
+                        <button class="btn-secondary" onclick="showVisualGuide()">View Application Guide</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-text-primary font-medium">Resume Portal</span>
+                </div>
+                <div class="flex space-x-6 text-sm text-text-secondary">
+                    <a href="help_center.html" class="hover:text-primary transition-fast">Help Center</a>
+                    <a href="privacy_policy.html" class="hover:text-primary transition-fast">Privacy Policy</a>
+                    <a href="status_tracker_portal.html" class="hover:text-primary transition-fast">Track Application</a>
+                </div>
+            </div>
+            <div class="text-center text-sm text-text-secondary mt-4">
+                © 2025 Resume Portal. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // FAQ toggle functionality
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+                button.parentElement.classList.add('border-primary');
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+                button.parentElement.classList.remove('border-primary');
+            }
+        }
+
+        // Search functionality
+        function searchFAQ() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            const sections = document.querySelectorAll('.faq-section');
+            
+            let hasVisibleItems = false;
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm) || searchTerm === '') {
+                    item.style.display = 'block';
+                    hasVisibleItems = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show/hide sections based on visible items
+            sections.forEach(section => {
+                const visibleItems = section.querySelectorAll('.faq-item[style="display: block;"], .faq-item:not([style])');
+                if (visibleItems.length > 0 || searchTerm === '') {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+            
+            // Show no results message
+            const existingNoResults = document.getElementById('noResults');
+            if (existingNoResults) {
+                existingNoResults.remove();
+            }
+            
+            if (!hasVisibleItems && searchTerm !== '') {
+                const noResults = document.createElement('div');
+                noResults.id = 'noResults';
+                noResults.className = 'text-center py-12';
+                noResults.innerHTML = `
+                    <svg class="w-16 h-16 text-secondary-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <h3 class="text-xl font-medium text-text-primary mb-2">No results found</h3>
+                    <p class="text-text-secondary mb-4">Try different keywords or browse our categories above</p>
+                    <button class="btn-secondary" onclick="clearSearch()">Clear Search</button>
+                `;
+                document.querySelector('.space-y-12').appendChild(noResults);
+            }
+        }
+
+        // Clear search
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            searchFAQ();
+        }
+
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Live chat functionality
+        function openLiveChat() {
+            // In a real implementation, this would open a chat widget
+            alert('Live chat is currently available Monday-Friday, 9AM-6PM EST. For immediate assistance, please email support@resumeportal.com');
+        }
+
+        // Visual guide functionality
+        function showVisualGuide() {
+            // In a real implementation, this would open a modal or new page with visual guides
+            alert('Visual application guide coming soon! For now, please refer to the FAQ sections above or contact support for assistance.');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

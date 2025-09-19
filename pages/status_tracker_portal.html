@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Your Application - Resume Portal</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fresumepor2237back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface shadow-sm border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <h1 class="text-xl font-semibold text-text-primary">Resume Portal</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="main_submission_form.html" class="text-text-secondary hover:text-primary transition-fast">Submit Application</a>
+                    <a href="status_tracker_portal.html" class="text-primary font-medium">Track Status</a>
+                    <a href="help_center.html" class="text-text-secondary hover:text-primary transition-fast">Help Center</a>
+                    <a href="employer_dashboard.html" class="text-text-secondary hover:text-primary transition-fast">Employers</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-secondary-100 transition-fast" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="main_submission_form.html" class="text-text-secondary hover:text-primary transition-fast py-2">Submit Application</a>
+                    <a href="status_tracker_portal.html" class="text-primary font-medium py-2">Track Status</a>
+                    <a href="help_center.html" class="text-text-secondary hover:text-primary transition-fast py-2">Help Center</a>
+                    <a href="employer_dashboard.html" class="text-text-secondary hover:text-primary transition-fast py-2">Employers</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Page Header -->
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-semibold text-text-primary mb-4">Track Your Application</h2>
+                <p class="text-text-secondary text-lg">Stay informed about your application progress with real-time updates and transparent communication.</p>
+            </div>
+
+            <!-- Application Lookup -->
+            <div class="card mb-8">
+                <div class="flex items-center mb-6">
+                    <svg class="w-6 h-6 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                    <h3 class="text-xl font-medium text-text-primary">Find Your Application</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="applicationId" class="form-label">Application ID</label>
+                        <input type="text" id="applicationId" class="form-input" placeholder="e.g., APP-2025-001234" oninput="handleLookup()" />
+                        <p class="text-sm text-text-secondary mt-1">Found in your confirmation email</p>
+                    </div>
+                    <div>
+                        <label for="emailLookup" class="form-label">Email Address</label>
+                        <input type="email" id="emailLookup" class="form-input" placeholder="your.email@example.com" oninput="handleLookup()" />
+                        <p class="text-sm text-text-secondary mt-1">Used during application submission</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <button onclick="searchApplication()" class="btn-primary" id="searchBtn">
+                        <span class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                            Search Application
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Application Status Dashboard -->
+            <div id="statusDashboard" class="hidden">
+                <!-- Application Overview -->
+                <div class="card mb-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                        <div>
+                            <h3 class="text-xl font-medium text-text-primary mb-2">Application Overview</h3>
+                            <p class="text-text-secondary">Application ID: <span class="font-medium text-text-primary">APP-2025-001234</span></p>
+                        </div>
+                        <div class="mt-4 md:mt-0">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-600">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                                Under Review
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-semibold text-text-primary">Sept 1, 2025</div>
+                            <div class="text-sm text-text-secondary">Application Submitted</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-semibold text-primary">3-5 days</div>
+                            <div class="text-sm text-text-secondary">Estimated Review Time</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-semibold text-text-primary">Sarah Johnson</div>
+                            <div class="text-sm text-text-secondary">Applicant Name</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Timeline -->
+                <div class="card mb-8">
+                    <h3 class="text-xl font-medium text-text-primary mb-6 flex items-center">
+                        <svg class="w-6 h-6 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        Application Progress
+                    </h3>
+                    
+                    <div class="relative">
+                        <!-- Progress Line -->
+                        <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-secondary-200"></div>
+                        <div class="absolute left-8 top-0 w-0.5 bg-primary h-32"></div>
+                        
+                        <!-- Timeline Items -->
+                        <div class="space-y-8">
+                            <!-- Submitted -->
+                            <div class="relative flex items-start">
+                                <div class="flex-shrink-0 w-16 h-16 bg-success-500 rounded-full flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                </div>
+                                <div class="ml-6 flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="text-lg font-medium text-text-primary">Application Submitted</h4>
+                                        <span class="text-sm text-success-600 font-medium">Completed</span>
+                                    </div>
+                                    <p class="text-text-secondary mt-1">Your application has been successfully received and is in our system.</p>
+                                    <p class="text-sm text-text-secondary mt-2">September 1, 2025 at 2:30 PM</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Under Review -->
+                            <div class="relative flex items-start">
+                                <div class="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center animate-pulse">
+                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <div class="ml-6 flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="text-lg font-medium text-text-primary">Under Review</h4>
+                                        <span class="text-sm text-primary font-medium">In Progress</span>
+                                    </div>
+                                    <p class="text-text-secondary mt-1">Our hiring team is currently reviewing your application and qualifications.</p>
+                                    <p class="text-sm text-text-secondary mt-2">Expected completion: September 4-6, 2025</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Interview Scheduled -->
+                            <div class="relative flex items-start">
+                                <div class="flex-shrink-0 w-16 h-16 bg-secondary-300 rounded-full flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-secondary-600" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                                    </svg>
+                                </div>
+                                <div class="ml-6 flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="text-lg font-medium text-secondary-500">Interview Scheduled</h4>
+                                        <span class="text-sm text-secondary-500 font-medium">Pending</span>
+                                    </div>
+                                    <p class="text-secondary-400 mt-1">If your application passes initial review, we'll schedule an interview.</p>
+                                    <p class="text-sm text-secondary-400 mt-2">Timeline: 1-2 weeks after review completion</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Decision -->
+                            <div class="relative flex items-start">
+                                <div class="flex-shrink-0 w-16 h-16 bg-secondary-300 rounded-full flex items-center justify-center">
+                                    <svg class="w-8 h-8 text-secondary-600" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <div class="ml-6 flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <h4 class="text-lg font-medium text-secondary-500">Final Decision</h4>
+                                        <span class="text-sm text-secondary-500 font-medium">Pending</span>
+                                    </div>
+                                    <p class="text-secondary-400 mt-1">We'll notify you of our final decision regarding your application.</p>
+                                    <p class="text-sm text-secondary-400 mt-2">Timeline: Within 1 week of interview completion</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application Details -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Application Information -->
+                    <div class="card">
+                        <h3 class="text-xl font-medium text-text-primary mb-6 flex items-center">
+                            <svg class="w-6 h-6 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                            Application Details
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Position Applied:</span>
+                                <span class="text-text-primary font-medium">Senior Software Engineer</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Experience Level:</span>
+                                <span class="text-text-primary font-medium">7-10 years</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Location:</span>
+                                <span class="text-text-primary font-medium">San Francisco, CA</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">Resume:</span>
+                                <a href="javascript:void(0)" class="text-primary hover:underline font-medium">Sarah_Johnson_Resume.pdf</a>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-text-secondary">LinkedIn:</span>
+                                <a href="javascript:void(0)" class="text-primary hover:underline font-medium">linkedin.com/in/sarah-johnson</a>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-border">
+                            <button onclick="updateApplication()" class="btn-secondary w-full">
+                                <span class="flex items-center justify-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                                    </svg>
+                                    Update Application
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Notification Preferences -->
+                    <div class="card">
+                        <h3 class="text-xl font-medium text-text-primary mb-6 flex items-center">
+                            <svg class="w-6 h-6 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                            </svg>
+                            Notification Settings
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <label class="flex items-center">
+                                <input type="checkbox" checked class="mr-3 h-4 w-4 text-primary border-border rounded focus:ring-primary" />
+                                <span class="text-text-primary">Email notifications</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-primary border-border rounded focus:ring-primary" />
+                                <span class="text-text-primary">SMS updates</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" checked class="mr-3 h-4 w-4 text-primary border-border rounded focus:ring-primary" />
+                                <span class="text-text-primary">Status change alerts</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-3 h-4 w-4 text-primary border-border rounded focus:ring-primary" />
+                                <span class="text-text-primary">Interview reminders</span>
+                            </label>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-border">
+                            <button onclick="savePreferences()" class="btn-primary w-full">
+                                <span class="flex items-center justify-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    Save Preferences
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interview Scheduling -->
+                <div class="card mb-8 hidden" id="interviewSection">
+                    <h3 class="text-xl font-medium text-text-primary mb-6 flex items-center">
+                        <svg class="w-6 h-6 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                        </svg>
+                        Interview Scheduling
+                    </h3>
+                    
+                    <div class="bg-primary-50 border border-primary-200 rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <svg class="w-8 h-8 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                            </svg>
+                            <div>
+                                <h4 class="text-lg font-medium text-primary">Interview Scheduled</h4>
+                                <p class="text-primary-600">September 10, 2025 at 2:00 PM PST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <span class="text-sm font-medium text-primary">Duration:</span>
+                                <span class="text-primary-600 ml-2">60 minutes</span>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-primary">Format:</span>
+                                <span class="text-primary-600 ml-2">Video Call</span>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-primary">Interviewer:</span>
+                                <span class="text-primary-600 ml-2">Alex Chen, Engineering Manager</span>
+                            </div>
+                            <div>
+                                <span class="text-sm font-medium text-primary">Meeting Link:</span>
+                                <a href="javascript:void(0)" class="text-primary hover:underline ml-2">Join Video Call</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="addToCalendar()" class="btn-primary flex-1">
+                                <span class="flex items-center justify-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                                    </svg>
+                                    Add to Calendar
+                                </span>
+                            </button>
+                            <button onclick="rescheduleInterview()" class="btn-secondary flex-1">
+                                <span class="flex items-center justify-center">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                                    </svg>
+                                    Reschedule
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application History -->
+                <div class="card">
+                    <h3 class="text-xl font-medium text-text-primary mb-6 flex items-center">
+                        <svg class="w-6 h-6 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z"/>
+                        </svg>
+                        Application History
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-secondary-50 rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-success-500 rounded-full mr-3"></div>
+                                <div>
+                                    <p class="font-medium text-text-primary">Application submitted successfully</p>
+                                    <p class="text-sm text-text-secondary">September 1, 2025 at 2:30 PM</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-success-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-4 bg-secondary-50 rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                                <div>
+                                    <p class="font-medium text-text-primary">Application moved to review stage</p>
+                                    <p class="text-sm text-text-secondary">September 2, 2025 at 9:15 AM</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-4 bg-secondary-50 rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                                <div>
+                                    <p class="font-medium text-text-primary">Email notification sent</p>
+                                    <p class="text-sm text-text-secondary">September 2, 2025 at 9:20 AM</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Application Button -->
+            <div class="text-center mb-8">
+                <button onclick="showDemoApplication()" class="btn-secondary" id="demoBtn">
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        View Demo Application
+                    </span>
+                </button>
+                <p class="text-sm text-text-secondary mt-2">See how the tracking system works with sample data</p>
+            </div>
+
+            <!-- Help Section -->
+            <div class="card bg-secondary-50">
+                <div class="text-center">
+                    <svg class="w-12 h-12 text-primary mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                    </svg>
+                    <h3 class="text-xl font-medium text-text-primary mb-4">Need Help?</h3>
+                    <p class="text-text-secondary mb-6">Can't find your application or have questions about the process?</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="help_center.html" class="btn-primary">
+                            <span class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                                </svg>
+                                Visit Help Center
+                            </span>
+                        </a>
+                        <a href="main_submission_form.html" class="btn-secondary">
+                            <span class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                                </svg>
+                                Submit New Application
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-text-primary font-medium">Resume Portal</span>
+                </div>
+                <div class="flex space-x-6 text-sm text-text-secondary">
+                    <a href="help_center.html" class="hover:text-primary transition-fast">Help Center</a>
+                    <a href="privacy_policy.html" class="hover:text-primary transition-fast">Privacy Policy</a>
+                    <a href="main_submission_form.html" class="hover:text-primary transition-fast">Submit Application</a>
+                </div>
+            </div>
+            <div class="text-center text-sm text-text-secondary mt-4">
+                © 2025 Resume Portal. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Handle lookup input
+        function handleLookup() {
+            const applicationId = document.getElementById('applicationId').value;
+            const email = document.getElementById('emailLookup').value;
+            const searchBtn = document.getElementById('searchBtn');
+            
+            if (applicationId.trim() || email.trim()) {
+                searchBtn.disabled = false;
+                searchBtn.classList.remove('opacity-50');
+            } else {
+                searchBtn.disabled = true;
+                searchBtn.classList.add('opacity-50');
+            }
+        }
+
+        // Search application
+        function searchApplication() {
+            const applicationId = document.getElementById('applicationId').value;
+            const email = document.getElementById('emailLookup').value;
+            
+            if (!applicationId.trim() && !email.trim()) {
+                alert('Please enter either an Application ID or Email Address');
+                return;
+            }
+            
+            // Show loading state
+            const searchBtn = document.getElementById('searchBtn');
+            searchBtn.disabled = true;
+            searchBtn.innerHTML = `
+                <span class="flex items-center">
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Searching...
+                </span>
+            `;
+            
+            // Simulate API call
+            setTimeout(() => {
+                document.getElementById('statusDashboard').classList.remove('hidden');
+                document.getElementById('demoBtn').classList.add('hidden');
+                
+                // Reset button
+                searchBtn.disabled = false;
+                searchBtn.innerHTML = `
+                    <span class="flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                        Search Application
+                    </span>
+                `;
+                
+                // Scroll to dashboard
+                document.getElementById('statusDashboard').scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
+        }
+
+        // Show demo application
+        function showDemoApplication() {
+            // Pre-fill demo data
+            document.getElementById('applicationId').value = 'APP-2025-001234';
+            document.getElementById('emailLookup').value = 'sarah.johnson@email.com';
+            
+            // Show dashboard
+            document.getElementById('statusDashboard').classList.remove('hidden');
+            document.getElementById('demoBtn').classList.add('hidden');
+            
+            // Scroll to dashboard
+            document.getElementById('statusDashboard').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Update application
+        function updateApplication() {
+            alert('Update functionality would redirect to a secure form where you can modify your application details.');
+        }
+
+        // Save preferences
+        function savePreferences() {
+            // Show success message
+            const button = event.target;
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = `
+                <span class="flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    Saved!
+                </span>
+            `;
+            button.classList.add('bg-success-500');
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('bg-success-500');
+            }, 2000);
+        }
+
+        // Add to calendar
+        function addToCalendar() {
+            alert('Calendar integration would generate an .ics file or integrate with popular calendar applications.');
+        }
+
+        // Reschedule interview
+        function rescheduleInterview() {
+            alert('Reschedule functionality would open a calendar interface to select new available times.');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize lookup validation
+            handleLookup();
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

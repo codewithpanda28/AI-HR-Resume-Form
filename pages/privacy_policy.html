@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Resume Portal</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fresumepor2237back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface shadow-sm border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <h1 class="text-xl font-semibold text-text-primary">Resume Portal</h1>
+                </div>
+                
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="main_submission_form.html" class="text-text-secondary hover:text-primary transition-fast">Submit Application</a>
+                    <a href="status_tracker_portal.html" class="text-text-secondary hover:text-primary transition-fast">Track Status</a>
+                    <a href="help_center.html" class="text-text-secondary hover:text-primary transition-fast">Help Center</a>
+                    <a href="employer_dashboard.html" class="text-text-secondary hover:text-primary transition-fast">Employers</a>
+                    <a href="privacy_policy.html" class="text-primary font-medium">Privacy Policy</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-secondary-100 transition-fast" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="main_submission_form.html" class="text-text-secondary hover:text-primary transition-fast py-2">Submit Application</a>
+                    <a href="status_tracker_portal.html" class="text-text-secondary hover:text-primary transition-fast py-2">Track Status</a>
+                    <a href="help_center.html" class="text-text-secondary hover:text-primary transition-fast py-2">Help Center</a>
+                    <a href="employer_dashboard.html" class="text-text-secondary hover:text-primary transition-fast py-2">Employers</a>
+                    <a href="privacy_policy.html" class="text-primary font-medium py-2">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center mb-6">
+                    <svg class="w-12 h-12 text-primary mr-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M11,7H13V9H11V7M11,11H13V17H11V11Z"/>
+                    </svg>
+                    <h1 class="text-4xl font-semibold text-text-primary">Privacy Policy</h1>
+                </div>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Your privacy is fundamental to our mission. This policy explains how Resume Portal collects, uses, and protects your personal information with complete transparency.
+                </p>
+                <div class="mt-6 flex items-center justify-center space-x-4 text-sm text-text-secondary">
+                    <span class="flex items-center">
+                        <svg class="w-4 h-4 mr-1 text-success-500" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Last Updated: September 4, 2025
+                    </span>
+                    <span class="flex items-center">
+                        <svg class="w-4 h-4 mr-1 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                        GDPR Compliant
+                    </span>
+                </div>
+            </div>
+
+            <!-- Trust Signals -->
+            <div class="bg-secondary-100 rounded-lg p-6 mb-8">
+                <div class="flex flex-wrap items-center justify-center gap-6">
+                    <div class="flex items-center text-success-600">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                        </svg>
+                        <span class="font-medium">SSL Encrypted</span>
+                    </div>
+                    <div class="flex items-center text-primary">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M11,7H13V9H11V7M11,11H13V17H11V11Z"/>
+                        </svg>
+                        <span class="font-medium">GDPR Compliant</span>
+                    </div>
+                    <div class="flex items-center text-accent">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9,12L11,14L15,10L13.59,8.59L11,11.17L9.41,9.59L8,11M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
+                        </svg>
+                        <span class="font-medium">SOC 2 Certified</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="card mb-8">
+                <h2 class="text-xl font-medium text-text-primary mb-4">Quick Navigation</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <a href="#data-collection" class="flex items-center p-3 rounded-lg hover:bg-secondary-100 transition-fast">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                        <span class="text-text-primary font-medium">Data Collection</span>
+                    </a>
+                    <a href="#data-usage" class="flex items-center p-3 rounded-lg hover:bg-secondary-100 transition-fast">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                        <span class="text-text-primary font-medium">Data Usage</span>
+                    </a>
+                    <a href="#data-storage" class="flex items-center p-3 rounded-lg hover:bg-secondary-100 transition-fast">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                        <span class="text-text-primary font-medium">Data Storage</span>
+                    </a>
+                    <a href="#data-sharing" class="flex items-center p-3 rounded-lg hover:bg-secondary-100 transition-fast">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                        <span class="text-text-primary font-medium">Data Sharing</span>
+                    </a>
+                    <a href="#your-rights" class="flex items-center p-3 rounded-lg hover:bg-secondary-100 transition-fast">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                        <span class="text-text-primary font-medium">Your Rights</span>
+                    </a>
+                    <a href="#contact" class="flex items-center p-3 rounded-lg hover:bg-secondary-100 transition-fast">
+                        <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                        </svg>
+                        <span class="text-text-primary font-medium">Contact Us</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Data Collection Section -->
+            <section id="data-collection" class="card mb-8">
+                <div class="flex items-center mb-6">
+                    <svg class="w-8 h-8 text-primary mr-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                    </svg>
+                    <h2 class="text-2xl font-semibold text-text-primary">What Information We Collect</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-primary-50 rounded-lg p-6">
+                        <h3 class="text-lg font-medium text-text-primary mb-3">Plain Language Summary</h3>
+                        <p class="text-text-secondary">
+                            We collect only the information you provide when submitting your application through our form. This includes your contact details, professional information, resume file, and any preferences you select.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-medium text-text-primary mb-4">Information You Provide Directly</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="border border-border rounded-lg p-4">
+                                <h4 class="font-medium text-text-primary mb-2 flex items-center">
+                                    <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                    Personal Information
+                                </h4>
+                                <ul class="text-text-secondary text-sm space-y-1">
+                                    <li>• Full name</li>
+                                    <li>• Email address</li>
+                                    <li>• Phone number</li>
+                                    <li>• Location (city, state)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border border-border rounded-lg p-4">
+                                <h4 class="font-medium text-text-primary mb-2 flex items-center">
+                                    <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                    Professional Details
+                                </h4>
+                                <ul class="text-text-secondary text-sm space-y-1">
+                                    <li>• Job title and experience level</li>
+                                    <li>• Skills and competencies</li>
+                                    <li>• Professional summary</li>
+                                    <li>• Resume file or LinkedIn profile</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border border-border rounded-lg p-4">
+                                <h4 class="font-medium text-text-primary mb-2 flex items-center">
+                                    <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5Z"/>
+                                    </svg>
+                                    Application Preferences
+                                </h4>
+                                <ul class="text-text-secondary text-sm space-y-1">
+                                    <li>• Preferred job type</li>
+                                    <li>• Expected salary range</li>
+                                    <li>• Communication preferences</li>
+                                    <li>• Notification settings</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="border border-border rounded-lg p-4">
+                                <h4 class="font-medium text-text-primary mb-2 flex items-center">
+                                    <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
+                                    </svg>
+                                    Technical Information
+                                </h4>
+                                <ul class="text-text-secondary text-sm space-y-1">
+                                    <li>• IP address (for security)</li>
+                                    <li>• Browser type and version</li>
+                                    <li>• Device information</li>
+                                    <li>• Submission timestamp</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Usage Section -->
+            <section id="data-usage" class="card mb-8">
+                <div class="flex items-center mb-6">
+                    <svg class="w-8 h-8 text-primary mr-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9,12L11,14L15,10L13.59,8.59L11,11.17L9.41,9.59L8,11M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
+                    </svg>
+                    <h2 class="text-2xl font-semibold text-text-primary">How We Use Your Information</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-success-50 rounded-lg p-6">
+                        <h3 class="text-lg font-medium text-text-primary mb-3">Plain Language Summary</h3>
+                        <p class="text-text-secondary">
+                            We use your information solely for recruitment purposes: reviewing your application, contacting you about opportunities, and improving our hiring process. We never sell your data or use it for unrelated marketing.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-success-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-medium text-text-primary mb-2">Application Processing</h4>
+                                <p class="text-text-secondary">Review your qualifications, match you with suitable positions, and facilitate the hiring process with relevant employers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-success-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-medium text-text-primary mb-2">Communication</h4>
+                                <p class="text-text-secondary">Send you updates about your application status, interview invitations, and relevant job opportunities based on your preferences.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-success-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-medium text-text-primary mb-2">Service Improvement</h4>
+                                <p class="text-text-secondary">Analyze application patterns to improve our platform, enhance user experience, and optimize our matching algorithms.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-success-500 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div>
+                                <h4 class="font-medium text-text-primary mb-2">Legal Compliance</h4>
+                                <p class="text-text-secondary">Maintain records as required by employment law, respond to legal requests, and ensure compliance with data protection regulations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Storage Section -->
+            <section id="data-storage" class="card mb-8">
+                <div class="flex items-center mb-6">
+                    <svg class="w-8 h-8 text-primary mr-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                    </svg>
+                    <h2 class="text-2xl font-semibold text-text-primary">How We Store and Protect Your Data</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-accent-100 rounded-lg p-6">
+                        <h3 class="text-lg font-medium text-text-primary mb-3">Plain Language Summary</h3>
+                        <p class="text-text-secondary">
+                            Your data is stored securely using industry-standard encryption and security measures. We keep your information only as long as necessary for recruitment purposes, typically 2 years unless you request earlier deletion.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border border-border rounded-lg p-6">
+                            <h4 class="font-medium text-text-primary mb-4 flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9L10,17Z"/>
+                                </svg>
+                                Security Measures
+                            </h4>
+                            <ul class="text-text-secondary space-y-2">
+                                <li class="flex items-start">
+                                    <svg class="w-4 h-4 text-success-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>256-bit SSL encryption in transit</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-4 h-4 text-success-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>AES-256 encryption at rest</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-4 h-4 text-success-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>Regular security audits</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-4 h-4 text-success-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span>Access controls and monitoring</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border border-border rounded-lg p-6">
+                            <h4 class="font-medium text-text-primary mb-4 flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z"/>
+                                </svg>
+                                Data Retention
+                            </h4>
+                            <ul class="text-text-secondary space-y-2">
+                                <li class="flex items-start">
+                                    <svg class="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                                    </svg>
+                                    <span>Active applications: Until hiring decision</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                                    </svg>
+                                    <span>Talent pool: Up to 2 years</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                                    </svg>
+                                    <span>Legal requirements: As mandated</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <svg class="w-4 h-4 text-primary mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                                    </svg>
+                                    <span>Deletion upon request: Within 30 days</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Sharing Section -->
+            <section id="data-sharing" class="card mb-8">
+                <div class="flex items-center mb-6">
+                    <svg class="w-8 h-8 text-primary mr-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18,16.08C17.24,16.08 16.56,16.38 16.04,16.85L8.91,12.7C8.96,12.47 9,12.24 9,12C9,11.76 8.96,11.53 8.91,11.3L15.96,7.19C16.5,7.69 17.21,8 18,8A3,3 0 0,0 21,5A3,3 0 0,0 18,2A3,3 0 0,0 15,5C15,5.24 15.04,5.47 15.09,5.7L8.04,9.81C7.5,9.31 6.79,9 6,9A3,3 0 0,0 3,12A3,3 0 0,0 6,15C6.79,15 7.5,14.69 8.04,14.19L15.16,18.34C15.11,18.55 15.08,18.77 15.08,19C15.08,20.61 16.39,21.91 18,21.91C19.61,21.91 20.92,20.61 20.92,19A2.92,2.92 0 0,0 18,16.08Z"/>
+                    </svg>
+                    <h2 class="text-2xl font-semibold text-text-primary">When We Share Your Information</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-warning-100 rounded-lg p-6">
+                        <h3 class="text-lg font-medium text-text-primary mb-3">Plain Language Summary</h3>
+                        <p class="text-text-secondary">
+                            We share your information only with potential employers for specific job opportunities, trusted service providers who help us operate our platform, and when required by law. We never sell your data to third parties.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="border border-success-500 bg-success-50 rounded-lg p-4">
+                            <h4 class="font-medium text-success-600 mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                With Your Consent
+                            </h4>
+                            <p class="text-success-600 text-sm">We share your application with employers only for positions you've applied to or expressed interest in.</p>
+                        </div>
+                        
+                        <div class="border border-primary bg-primary-50 rounded-lg p-4">
+                            <h4 class="font-medium text-primary mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
+                                </svg>
+                                Service Providers
+                            </h4>
+                            <p class="text-primary text-sm">Trusted partners who help us operate our platform (hosting, analytics, email services) under strict confidentiality agreements.</p>
+                        </div>
+                        
+                        <div class="border border-secondary-300 bg-secondary-100 rounded-lg p-4">
+                            <h4 class="font-medium text-text-primary mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,7H13V9H11V7M11,11H13V17H11V11Z"/>
+                                </svg>
+                                Legal Requirements
+                            </h4>
+                            <p class="text-text-secondary text-sm">When required by law, court order, or to protect our rights and the safety of our users.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-error-100 border border-error-500 rounded-lg p-4">
+                        <h4 class="font-medium text-error-600 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                            </svg>
+                            We Never Do This
+                        </h4>
+                        <ul class="text-error-600 text-sm space-y-1">
+                            <li>• Sell your data to third parties</li>
+                            <li>• Share information for unrelated marketing</li>
+                            <li>• Provide data to data brokers</li>
+                            <li>• Use your information for advertising purposes</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Your Rights Section -->
+            <section id="your-rights" class="card mb-8">
+                <div class="flex items-center mb-6">
+                    <svg class="w-8 h-8 text-primary mr-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M11,7H13V9H11V7M11,11H13V17H11V11Z"/>
+                    </svg>
+                    <h2 class="text-2xl font-semibold text-text-primary">Your Privacy Rights</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-primary-50 rounded-lg p-6">
+                        <h3 class="text-lg font-medium text-text-primary mb-3">Plain Language Summary</h3>
+                        <p class="text-text-secondary">
+                            You have complete control over your personal data. You can access, update, download, or delete your information at any time. We're committed to honoring these rights promptly and transparently.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border border-border rounded-lg p-6">
+                            <h4 class="font-medium text-text-primary mb-4 flex items-center">
+                                <svg class="w-6 h-6 text-success-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+                                </svg>
+                                Access Your Data
+                            </h4>
+                            <p class="text-text-secondary text-sm mb-3">Request a copy of all personal information we have about you.</p>
+                            <button class="btn-secondary text-sm" onclick="requestDataAccess()">Request Data Access</button>
+                        </div>
+                        
+                        <div class="border border-border rounded-lg p-6">
+                            <h4 class="font-medium text-text-primary mb-4 flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z"/>
+                                </svg>
+                                Update Information
+                            </h4>
+                            <p class="text-text-secondary text-sm mb-3">Correct or update any inaccurate personal information.</p>
+                            <button class="btn-secondary text-sm" onclick="updateInformation()">Update Profile</button>
+                        </div>
+                        
+                        <div class="border border-border rounded-lg p-6">
+                            <h4 class="font-medium text-text-primary mb-4 flex items-center">
+                                <svg class="w-6 h-6 text-accent mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                </svg>
+                                Download Data
+                            </h4>
+                            <p class="text-text-secondary text-sm mb-3">Get a portable copy of your data in a standard format.</p>
+                            <button class="btn-secondary text-sm" onclick="downloadData()">Download My Data</button>
+                        </div>
+                        
+                        <div class="border border-error-500 bg-error-50 rounded-lg p-6">
+                            <h4 class="font-medium text-error-600 mb-4 flex items-center">
+                                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"/>
+                                </svg>
+                                Delete Account
+                            </h4>
+                            <p class="text-error-600 text-sm mb-3">Permanently remove all your personal information from our systems.</p>
+                            <button class="bg-error-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-error-600 transition-fast" onclick="deleteAccount()">Delete My Account</button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-secondary-100 rounded-lg p-6">
+                        <h4 class="font-medium text-text-primary mb-3">Response Timeline</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                            <div class="text-center">
+                                <div class="text-2xl font-semibold text-primary mb-1">24 hours</div>
+                                <div class="text-text-secondary">Acknowledgment</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-semibold text-primary mb-1">7 days</div>
+                                <div class="text-text-secondary">Simple requests</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-semibold text-primary mb-1">30 days</div>
+                                <div class="text-text-secondary">Complex requests</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="card mb-8">
+                <div class="flex items-center mb-6">
+                    <svg class="w-8 h-8 text-primary mr-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                    </svg>
+                    <h2 class="text-2xl font-semibold text-text-primary">Contact Our Privacy Team</h2>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-primary-50 rounded-lg p-6">
+                        <h3 class="text-lg font-medium text-text-primary mb-3">Questions About Your Privacy?</h3>
+                        <p class="text-text-secondary">
+                            Our dedicated privacy team is here to help with any questions about your data, privacy rights, or this policy. We're committed to transparent communication and prompt responses.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border border-border rounded-lg p-6">
+                            <h4 class="font-medium text-text-primary mb-4 flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                                </svg>
+                                Email Support
+                            </h4>
+                            <p class="text-text-secondary text-sm mb-3">For privacy questions and data requests</p>
+                            <a href="mailto:privacy@resumeportal.com" class="text-primary hover:underline font-medium">privacy@resumeportal.com</a>
+                        </div>
+                        
+                        <div class="border border-border rounded-lg p-6">
+                            <h4 class="font-medium text-text-primary mb-4 flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L6.5,12L7.91,10.59L11,13.67L16.59,8.09L18,9.5L11,16.5Z"/>
+                                </svg>
+                                Data Protection Officer
+                            </h4>
+                            <p class="text-text-secondary text-sm mb-3">For formal privacy complaints and GDPR matters</p>
+                            <a href="mailto:dpo@resumeportal.com" class="text-primary hover:underline font-medium">dpo@resumeportal.com</a>
+                        </div>
+                        
+                        <div class="border border-border rounded-lg p-6">
+                            <h4 class="font-medium text-text-primary mb-4 flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                                </svg>
+                                Phone Support
+                            </h4>
+                            <p class="text-text-secondary text-sm mb-3">Monday - Friday, 9 AM - 5 PM EST</p>
+                            <a href="tel:+1-555-PRIVACY" class="text-primary hover:underline font-medium">+1 (555) PRIVACY</a>
+                        </div>
+                        
+                        <div class="border border-border rounded-lg p-6">
+                            <h4 class="font-medium text-text-primary mb-4 flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                                </svg>
+                                Mailing Address
+                            </h4>
+                            <p class="text-text-secondary text-sm">
+                                Resume Portal Privacy Team<br />
+                                123 Data Protection Lane<br />
+                                Privacy City, PC 12345
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Policy Updates -->
+            <div class="card">
+                <h2 class="text-xl font-medium text-text-primary mb-4">Policy Updates</h2>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                        </svg>
+                        <div>
+                            <h4 class="font-medium text-text-primary mb-1">Version 2.1 - September 4, 2025</h4>
+                            <p class="text-text-secondary text-sm">Enhanced data retention policies and improved user rights section</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-secondary-400 mr-3 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                        </svg>
+                        <div>
+                            <h4 class="font-medium text-text-primary mb-1">Version 2.0 - June 15, 2025</h4>
+                            <p class="text-text-secondary text-sm">Major update for GDPR compliance and security enhancements</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-accent-100 rounded-lg">
+                    <p class="text-accent-600 text-sm">
+                        <strong>Stay Informed:</strong> We'll notify you of any material changes to this policy via email and prominent notice on our website at least 30 days before they take effect.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <svg class="w-6 h-6 text-primary mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span class="text-text-primary font-medium">Resume Portal</span>
+                </div>
+                <div class="flex space-x-6 text-sm text-text-secondary">
+                    <a href="help_center.html" class="hover:text-primary transition-fast">Help Center</a>
+                    <a href="privacy_policy.html" class="text-primary font-medium">Privacy Policy</a>
+                    <a href="status_tracker_portal.html" class="hover:text-primary transition-fast">Track Application</a>
+                </div>
+            </div>
+            <div class="text-center text-sm text-text-secondary mt-4">
+                © 2025 Resume Portal. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Privacy rights actions
+        function requestDataAccess() {
+            alert('Data access request initiated. You will receive an email with instructions within 24 hours.');
+        }
+
+        function updateInformation() {
+            window.location.href = 'main_submission_form.html';
+        }
+
+        function downloadData() {
+            alert('Data download request submitted. You will receive a secure download link via email within 7 days.');
+        }
+
+        function deleteAccount() {
+            if (confirm('Are you sure you want to permanently delete your account? This action cannot be undone.')) {
+                alert('Account deletion request submitted. You will receive a confirmation email with final steps.');
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
