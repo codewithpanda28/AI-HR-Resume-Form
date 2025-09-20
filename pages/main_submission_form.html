@@ -537,7 +537,7 @@
                 formData.append('userAgent', navigator.userAgent);
 
                 // Submit to webhook
-                const webhookUrl = 'https://autheraai.app.n8n.cloud/webhook-test/resume-upload';
+                const webhookUrl = 'https://autheraai.app.n8n.cloud/webhook/resume-upload';
                 
                 const response = await fetch(webhookUrl, {
                     method: 'POST',
