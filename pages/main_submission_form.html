@@ -538,20 +538,14 @@
 
                 // Submit to webhook
                 const webhookUrl = 'https://akash180117.app.n8n.cloud/webhook/cbb76c0a-e2f1-4fc7-b7ba-7cc426f86dcf';
-             const data = {
-  submissionDate: new Date().toISOString(),
-  userAgent: navigator.userAgent,
-  // baki form ke fields yahaan add kar
-};
-
-const response = await fetch(webhookUrl, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(data)
-});
-
+                
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
                 if (response.ok) {
                     // Success - redirect to confirmation page
